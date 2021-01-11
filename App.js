@@ -1,21 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { Text, View, StyleSheet } from 'react-native';
+import {ListItem, Header} from 'react-native-elements';
+import ProductosProvider from './Context/ProductosContext'
+import Constants from 'expo-constants';
+import {NavigationContainer} from '@react-navigation/native';
+import StackNavigator1 from './Navigations/StackNavigator1';
+import Formulario from './Screens/Formulario'
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ProductosProvider>
+    <NavigationContainer>
+          <StackNavigator1/>
+      </NavigationContainer>
+     </ProductosProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
